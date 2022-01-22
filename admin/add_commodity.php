@@ -316,7 +316,7 @@ if (isset($_POST['save_commodity'])){
     $end=mysqli_real_escape_string($conn,$_POST['end']);
     $from=mysqli_real_escape_string($conn,$_POST['from']);
     $to=mysqli_real_escape_string($conn,$_POST['to']);
-    $range=$from."-".$to;
+    $range=$from."% - ".$to."%";
 
     $mainPhoto=$_FILES['main_photo']['name'];
     $mainPhotos=$_FILES["main_photo"]["tmp_name"];

@@ -1,10 +1,19 @@
+<?php
+include 'inc/db.php';
+
+$id=$_GET['d'];
+$q=mysqli_query($conn,"SELECT * FROM commodity WHERE commodity_id='$id'");
+$show=mysqli_fetch_array($q);
+
+
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Garden - Service One</title>
+	<title>Ssava farms</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -95,7 +104,7 @@
 			<div class="row align-items-center height-400">
 				<div class="col-lg-12">
 					<div class="page-banner-text text-center text-white">
-						<h2 style="font-family: 'Raleway', sans-serif">More health benefits. More alternative investment options. Groundnuts farming.
+						<h2 style="font-family: 'Raleway', sans-serif">More health benefits. More alternative investment options. <?php echo $show['cName'];?> farming.
                         </h2>
 						<ul class="site-breadcrumb">
 							<li><a href="#">Join us grow your side hustle today.</a> <span>.</span></li>
@@ -115,7 +124,7 @@
 			<div class="row">
 				<div class="col-lg-8 col-md-8 col-sm-12" style="padding-left: 80px;padding-right: 80px">
 
-					<h3 style="font-family: 'Gotham XLight'; text-align: center">Invest in premium groundnuts on large-scale organic farm</h3>
+					<h3 style="font-family: 'Gotham XLight'; text-align: center">Invest in premium <?php echo $show['cName'];?> on large-scale organic farm</h3>
                     <p>
                         Our partners ensure that the miracle tree is grown in suitable conditions and that proper due diligence is conducted. The high demand for moringa, in both local and international markets, is set to continue rising. The South African climate and geographical location puts this country in a perfect position to become a key player in the moringa industry. To meet the growing demand, our partners have enlisted the help of local communities, thereby creating a source of sustainable income for them as well.
 
@@ -129,7 +138,7 @@
 				
 				<div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="headText">
-                        <h2>2000RWF</h2>
+                        <h2><?php echo number_format($show['cost']);?>RWF</h2>
                         <p>Per tree</p>
                     </div>
                     <div class="downloadButton">
@@ -142,7 +151,7 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-12">
                                 <div class="insideDiv">
-                                    <h3>10%-12%</h3>
+                                    <h3><?php echo $show['range'];?></h3>
                                     <p>average profit over the investment term</p>
                                 </div>
                             </div>

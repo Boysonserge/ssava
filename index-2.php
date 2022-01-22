@@ -212,8 +212,8 @@
                             <span>ROS</span><span><b><?php echo $row['range']?></b></span>
                         </div>
                         <div class="card-data-btns wrap-b">
-                            <a class="card-data-btn" href="login.php">Sponsor Fam</a>
-                            <a class="card-data-btn-alt" href="checkout.php">Read</a>
+                            <a class="card-data-btn" href="checkout.php">Sponsor Fam</a>
+                            <a class="card-data-btn-alt" href="details.php?d=<?php echo $row['commodity_id']?>">Read</a>
                         </div>
 
 
