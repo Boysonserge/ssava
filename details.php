@@ -90,7 +90,6 @@ $show=mysqli_fetch_array($q);
             background-color: whitesmoke;
             padding: 20px;
             border: 1px solid #e7e7e7
-
         }
 
     </style>
