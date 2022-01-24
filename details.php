@@ -56,7 +56,7 @@ $show=mysqli_fetch_array($q);
         }
         .headText h2{
             color: #1c7430;
-            font-family: "Gotham Thin"
+            font-family: "Gotham Thin",sans-serif;
         }
         .downloadButton a{
             padding: 10px;
@@ -68,22 +68,29 @@ $show=mysqli_fetch_array($q);
 
         }
         .borderedContent{
-            padding:100px;
+            padding:70px;
             border-bottom:1px solid #eaeaea;
             border-top:1px solid #eaeaea;
+
         }
         .insideDiv{
             text-align: center;
+            background-color: whitesmoke;
+            padding: 20px;
+            border: 1px solid #e7e7e7
+
         }
         .insideDiv h3, .insideDiv-center h3{
             color:#1c7430 ;
-            font-family: "Gotham Thin"
+            font-family: "Gotham Thin",sans-serif;
         }
 
         .insideDiv-center{
             text-align: center;
-            border-left: 1px solid #eaeaea;
-            border-right: 1px solid #eaeaea;
+            background-color: whitesmoke;
+            padding: 20px;
+            border: 1px solid #e7e7e7
+
         }
 
     </style>

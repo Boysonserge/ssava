@@ -165,21 +165,7 @@ $msg='';
         <div class="wrapper">
             <div class="container-fluid">
 
-                <!-- Page-Title -->
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="page-title-box">
-                            <div class="row align-items-center">
-                                <div class="col-md-8">
-                                    <h4 class="page-title m-0"></h4>
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <!-- end page title end breadcrumb -->
+
 
 
                         <div class="row">
@@ -245,6 +231,29 @@ $msg='';
                                                 <label for="example-text-input" class="col-sm-4 col-form-label">Commodity photo:</label>
                                                 <div class="col-sm-8">
                                                     <input type="file" name="main_photo" class="form-control" required="">
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-sm-4 col-form-label">investment_term	</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" name="investment" class="form-control" required="">
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-sm-4 col-form-label">Expected_harvests	</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" name="expected" class="form-control" required="">
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-sm-4 col-form-label">Details	</label>
+                                                <div class="col-sm-8">
+                                                    <textarea class="form-control" name="details" id="" ></textarea>
                                                 </div>
 
                                             </div>
@@ -316,6 +325,10 @@ if (isset($_POST['save_commodity'])){
     $end=mysqli_real_escape_string($conn,$_POST['end']);
     $from=mysqli_real_escape_string($conn,$_POST['from']);
     $to=mysqli_real_escape_string($conn,$_POST['to']);
+    $investment=mysqli_real_escape_string($conn,$_POST['investment']);
+    $expected=mysqli_real_escape_string($conn,$_POST['$expected']);
+    $details=mysqli_real_escape_string($conn,$_POST['details']);
+
     $range=$from."% - ".$to."%";
 
     $mainPhoto=$_FILES['main_photo']['name'];
@@ -323,7 +336,7 @@ if (isset($_POST['save_commodity'])){
     $mainPhoto=explode(".","$mainPhoto");
     $mainPhoto=uniqid().".".end($mainPhoto);
 
-    $q="INSERT INTO `commodity` (`cName`, `cost`, `start_date`, `end_date`, `range`, `main_pic`) VALUES ('$cname', '$cost', '$start', '$end','$range','$mainPhoto')";
+    $q="INSERT INTO `commodity` (`cName`, `cost`, `start_date`, `end_date`, `range`, `investment_term`, `expected_harvests`, `details`, `main_pic`) VALUES ('$cname', '$cost', '$start', '$end','$range','$investment','$expected','$details','$mainPhoto')";
     if (mysqli_query($conn,$q)){
         move_uploaded_file($_FILES['main_photo']['tmp_name'],"../images/$mainPhoto");
         echo "<script>alert('Added!')</script>";
