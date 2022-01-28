@@ -158,7 +158,7 @@ $show=mysqli_fetch_array($q);
                     </div>
                     <div class="mt-20"></div>
                     <div class="downloadButton">
-                        <a href="checkout.php?order=<?php echo $show['commodity_id'] ?>" class="btn-download">Order this comodity</a>
+                        <a href="checkout-order.php?order=<?php echo $show['commodity_id'] ?>" class="btn-download">Order this comodity</a>
                     </div>
 				</div>
 

@@ -11,6 +11,8 @@ if (isset($_GET['invest'])){
 $q=mysqli_query($conn,"SELECT * FROM commodity WHERE commodity_id='$id'");
 $show=mysqli_fetch_array($q);
 
+$commodity=$show['cName'];
+
 
 ?>
     <!doctype html>
@@ -72,7 +74,7 @@ $show=mysqli_fetch_array($q);
             <div class="row align-items-center height-200">
                 <div class="col-sm-12">
                     <div class="page-banner-text text-white text-center">
-                        <h2>Commodity investment: </h2>
+                        <h2>Commodity order: </h2>
                         <ul class="site-breadcrumb text-muted">
                             <li><?php echo $show['cName']?></li>
                         </ul>
@@ -121,8 +123,9 @@ $show=mysqli_fetch_array($q);
 
 
                             <div class="place-order text-center btn-block">
-                                <button type="submit" name="send" class="btn-common width-180">Confirm investment</button>
+                                <button type="submit" name="send" class="btn-common width-180">Confirm order</button>
                             </div>
+                            <div class="mt-20"></div>
 
                         </form>
                     </div>
@@ -202,16 +205,16 @@ if (isset($_POST['send'])){
     $phone=mysqli_real_escape_string($conn,$_POST['phone']);
 
     $cId=$show['commodity_id'];
-    $test=mysqli_query($conn,"SELECT * FROM invests WHERE email='$email' OR phone='$phone'");
-    $dd="SELECT * FROM invests WHERE email=$email OR phone=$phone";
+    $test=mysqli_query($conn,"SELECT * FROM orders WHERE email='$email' OR phone='$phone'");
+    $dd="SELECT * FROM orders WHERE email=$email OR phone=$phone";
     if (mysqli_num_rows($test)>0){
         echo "<script>alert('Email or phone already exists!')</script>>";
     }else{
         $num=mysqli_num_rows($test);
-        $q="INSERT INTO `invests` (`invest_id`, `names`, `phone`, `email`, `commodity_id`) VALUES (NULL, '$names', '$phone', '$email', '$cId')";
+        $q="INSERT INTO `orders` (`order_id`, `names`, `phone`, `email`, `commodity_id`) VALUES (NULL, '$names', '$phone', '$email', '$cId')";
 
         if (mysqli_query($conn,$q)){
-            $msg="Thank for sponsoring this, we will reach you soon with more info";
+            $msg="Thank for ordering $commodity, we will reach you soon";
             $phone="+25".$phone;
             include_once 'inc/sms.php';
             echo "<script>alert('Success! Thank you $phone')</script>";
