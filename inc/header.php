@@ -43,21 +43,15 @@
                                 <li><a href="#">Farms</a></li>
 
                                 <li><a href="#">WHAT WE DO</a>
-                                    <ul class="submenu">
-                                        <li><a href="">ONE</a></li>
-                                        <li><a href="">Two</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">About us</a>
-                                    <ul class="submenu">
-                                        <li><a href="">ABout us</a></li>
-                                        <li><a href="">Our team</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Ventures</a>
 
                                 </li>
-                                <li><a href="">Contact Us</a></li>
+                                <li><a href="#">About us</a>
+
+
+                                </li>
+
+                                </li>
+                                <li><a href="contact.php">Contact Us</a></li>
                             </ul>
                         </nav>
                     </div>
