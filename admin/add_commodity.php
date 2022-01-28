@@ -161,12 +161,9 @@ $msg='';
                      
                             
                             
-<?php include "includes/header.php";?>
-        <div class="wrapper">
+        <?php include "includes/header.php";?>
+        <div class="wrapper bg-light">
             <div class="container-fluid">
-
-
-
 
                         <div class="row">
                      
@@ -176,20 +173,6 @@ $msg='';
                                     <div class="card-body">
 
                                         <h4 class="mt-0 header-title">Adding new commodity</h4>
-<!--                                        <div class="form-group row">-->
-<!--                                            <div class="wrapper">-->
-<!--                                                <div class="values">-->
-<!--                                                    <span id="range1">0</span>-->
-<!--                                                    <span> &dash; </span>-->
-<!--                                                    <span id="range2">100</span>-->
-<!--                                                </div>-->
-<!--                                                <div class="container">-->
-<!--                                                    <div class="slider-track"></div>-->
-<!--                                                    <input type="range" min="0" max="100" value="1" id="slider-1" oninput="slideOne()">-->
-<!--                                                    <input type="range" min="0" max="100" value="70" id="slider-2" oninput="slideTwo()">-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
                                         <form action="" method="POST" enctype="multipart/form-data">
                                             <div class="form-group row">
                                                 <label for="example-text-input" class="col-sm-4 col-form-label">Commodity name:</label>
@@ -204,26 +187,14 @@ $msg='';
                                                     <input name="cost" class="form-control" type="number"  id="example-text-input">
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="example-text-input" class="col-sm-4 col-form-label">Start date:</label>
-                                                <div class="col-sm-8">
-                                                    <input name="start" class="form-control" type="date" >
-                                                </div>
-                                            </div>
 
-                                            <div class="form-group row">
-                                                <label for="example-text-input" class="col-sm-4 col-form-label">End date:</label>
-                                                <div class="col-sm-8">
-                                                    <input name="end" class="form-control" type="date" >
-                                                </div>
-                                            </div>
                                             <div class="form-group row">
                                                 <label for="example-text-input" class="col-sm-4 col-form-label">Range:</label>
                                                 <div class="col-sm-4">
                                                     <input placeholder="from" name="from" class="form-control" type="text"  >
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <input placeholder="to" name="to" class="form-control" type="text"  >
+                                                    <input placeholder="to" name="to" class="form-control" type="text">
                                                 </div>
                                             </div>
 
@@ -232,30 +203,23 @@ $msg='';
                                                 <div class="col-sm-8">
                                                     <input type="file" name="main_photo" class="form-control" required="">
                                                 </div>
-
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="example-text-input" class="col-sm-4 col-form-label">investment_term	</label>
+                                                <label for="example-text-input" class="col-sm-4 col-form-label">investment_term<small class="text-primary">(in years)</small>
+                                                </label>
                                                 <div class="col-sm-8">
                                                     <input type="text" name="investment" class="form-control" required="">
                                                 </div>
 
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label for="example-text-input" class="col-sm-4 col-form-label">Expected_harvests	</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" name="expected" class="form-control" required="">
-                                                </div>
 
-                                            </div>
                                             <div class="form-group row">
                                                 <label for="example-text-input" class="col-sm-4 col-form-label">Details	</label>
                                                 <div class="col-sm-8">
-                                                    <textarea class="form-control" name="details" id="" ></textarea>
+                                                    <textarea cols="10" rows="7" class="form-control" name="details" id="" ></textarea>
                                                 </div>
-
                                             </div>
                                             <button type="submit" class="btn btn-block btn-success" name="save_commodity">SAVE</button>
                                         </form>
@@ -278,41 +242,7 @@ $msg='';
 
 </html>
  <script src="assets/js/app.js"></script>
-<script type="text/javascript">
-    window.onload = function () {
-        slideOne();
-        slideTwo();
-    };
 
-    let sliderOne = document.getElementById("slider-1");
-    let sliderTwo = document.getElementById("slider-2");
-    let displayValOne = document.getElementById("range1");
-    let displayValTwo = document.getElementById("range2");
-    let minGap = 0;
-    let sliderTrack = document.querySelector(".slider-track");
-    let sliderMaxValue = document.getElementById("slider-1").max;
-
-    function slideOne() {
-        if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
-            sliderOne.value = parseInt(sliderTwo.value) - minGap;
-        }
-        displayValOne.textContent = sliderOne.value;
-        fillColor();
-    }
-    function slideTwo() {
-        if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
-            sliderTwo.value = parseInt(sliderOne.value) + minGap;
-        }
-        displayValTwo.textContent = sliderTwo.value;
-        fillColor();
-    }
-    function fillColor() {
-        percent1 = (sliderOne.value / sliderMaxValue) * 100;
-        percent2 = (sliderTwo.value / sliderMaxValue) * 100;
-        sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #dadae5 ${percent2}%)`;
-    }
-
-</script>
 
 
 
@@ -321,12 +251,9 @@ if (isset($_POST['save_commodity'])){
     include "../inc/db.php";
     $cname=mysqli_real_escape_string($conn,$_POST['cname']);
     $cost=mysqli_real_escape_string($conn,$_POST['cost']);
-    $start=mysqli_real_escape_string($conn,$_POST['start']);
-    $end=mysqli_real_escape_string($conn,$_POST['end']);
     $from=mysqli_real_escape_string($conn,$_POST['from']);
     $to=mysqli_real_escape_string($conn,$_POST['to']);
     $investment=mysqli_real_escape_string($conn,$_POST['investment']);
-    $expected=mysqli_real_escape_string($conn,$_POST['$expected']);
     $details=mysqli_real_escape_string($conn,$_POST['details']);
 
     $range=$from."% - ".$to."%";
@@ -336,7 +263,7 @@ if (isset($_POST['save_commodity'])){
     $mainPhoto=explode(".","$mainPhoto");
     $mainPhoto=uniqid().".".end($mainPhoto);
 
-    $q="INSERT INTO `commodity` (`cName`, `cost`, `start_date`, `end_date`, `range`, `investment_term`, `expected_harvests`, `details`, `main_pic`) VALUES ('$cname', '$cost', '$start', '$end','$range','$investment','$expected','$details','$mainPhoto')";
+    $q="INSERT INTO `commodity` (`cName`, `cost`, `range`, `investment_term`, `details`, `main_pic`) VALUES ('$cname', '$cost','$range','$investment','$details','$mainPhoto')";
     if (mysqli_query($conn,$q)){
         move_uploaded_file($_FILES['main_photo']['tmp_name'],"../images/$mainPhoto");
         echo "<script>alert('Added!')</script>";

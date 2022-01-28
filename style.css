@@ -381,7 +381,8 @@ h1, h2, h3, h4, h5, h6 {
 	padding:10px 0;
 }
 .header-bottom.stick .logo img {
-	width:40px;
+	display: none;
+
 }
 /*----------------------------------------*/
 /*  3.1 Mainmenu CSS
@@ -716,16 +717,19 @@ h1, h2, h3, h4, h5, h6 {
 	background-color:#f7f7f7;
 }
 .banner-area.bg-1 {
-	background: rgba(0, 0, 0, 0) url("assets/images/banners/1.jpg") no-repeat scroll center center / cover ;
+	background: rgba(0, 0, 0, 0) url("https://www.orfonline.org/wp-content/uploads/2021/01/Paving-the-way-for-digital-green-economy-in-Indian-agriculture.jpg") no-repeat scroll center center / cover ;
 }
 .banner-area.bg-2 {
-	background: rgba(0, 0, 0, 0) url("assets/images/banners/2.jpg") repeat scroll center center / cover ;
+	background: rgba(0, 0, 0, 0) url("https://www.orfonline.org/wp-content/uploads/2021/01/Paving-the-way-for-digital-green-economy-in-Indian-agriculture.jpg") repeat scroll center center / cover ;
 }
 .banner-area.bg-3 {
 	background: rgba(0, 0, 0, 0) url("assets/images/banners/3.jpg") repeat scroll center center / cover ;
 }
 .banner-area.bg-4 {
 	background: rgba(0, 0, 0, 0) url("assets/images/banners/6.jpg") repeat scroll center center / cover ;
+}
+.banner-area.bg-5 {
+	background: rgba(0, 0, 0, 0) url("images/bg.jpg") repeat scroll center center / cover ;
 }
 .banner-text {
 	position:relative;
@@ -800,7 +804,7 @@ h1, h2, h3, h4, h5, h6 {
 	background: rgba(0, 0, 0, 0) url("assets/images/banners/page-banner-3.jpg") repeat scroll center center / cover ;
 }
 .page-banner-area.bg-5 {
-	background: rgba(0, 0, 0, 0) url("assets/images/banners/page-banner-6.jpg") repeat scroll center center / cover ;
+	background: rgba(0, 0, 0, 0) url("https://payh.org/wp-content/uploads/AdobeStock_299684410-scaled.jpeg") repeat scroll center center / cover ;
 }
 .page-banner-area.bg-6 {
 	background: rgba(0, 0, 0, 0) url("assets/images/banners/page-banner-5.jpg") repeat scroll center center / cover ;
@@ -3293,4 +3297,125 @@ a.value-decrease::before {
 
 
 
+*{
+	padding: 0;
+	margin: 0;
+	font-family:"Open Sans", sans-serif,sans-serif;
+}
+body{
+	background: #ecf1f1;
+}
 
+
+
+.wrap-a{
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	flex-flow: wrap;
+	justify-content: space-around;
+}
+.wrap-b{
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	flex-flow: wrap;
+	justify-content: space-between;
+}
+
+.cards-container{
+	padding: 50px 20px;
+}
+.cards-container .card-item{
+	width: 30%;
+	box-sizing: border-box;
+	box-shadow: 0 0 15px 0 rgba(0, 0, 0, .15);
+	border-radius: 10px;
+	margin-bottom: 50px;
+}
+.cards-container .card-item .card-image{
+	width: 100%;
+	height: 200px;
+	box-sizing: border-box;
+	overflow: hidden;
+	border-radius: 10px 10px 0 0;
+}
+.cards-container .card-item .card-image img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.cards-container .card-item .card-data{
+	padding: 30px 20px;
+	padding-top: 0;
+	background: #fff;
+	border-radius: 0 0 10px 10px;
+}
+.cards-container .card-item .card-data .card-data-heading{
+	color: #288b43;
+	padding: 10px 0;
+	font-size: 20px;
+	font-weight: bolder;
+	text-transform: uppercase;
+	border-bottom: 1px solid #c4d3c8;
+	margin-bottom: 10px;
+
+}
+.cards-container .card-item .card-data .card-data-caption{
+	color: #6e6f6e;
+	margin-bottom: 0px;
+	font-size: 12px;
+}.cards-container .card-item .card-data .card-data-caption .left{
+	 color: #000000;
+	 margin-bottom: 0px;
+	 font-size: 15px;
+	 font-weight: bolder;
+	 text-align: left;
+	 text-transform: uppercase;
+ }.cards-container .card-item .card-data .card-data-caption i{
+		margin-right: 6px;
+   }
+.cards-container .card-item .card-data .card-data-caption-alt{
+	color: #57655b;
+	margin-bottom: 10px;
+	font-size: 25px;
+}
+.cards-container .card-item .card-data .card-data-btns{
+	margin-top: 6px;
+}
+.cards-container .card-item .card-data .card-data-btns .card-data-btn{
+	background: #288b43;
+	border: 1px solid #288b43;
+	color: #fff;
+	padding: 10px 30px;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: .3s;
+}
+.cards-container .card-item .card-data .card-data-btns .card-data-btn:hover{
+	background: #fff;
+	color: #288b43;
+}
+.cards-container .card-item .card-data .card-data-btns .card-data-btn-alt{
+	background: #fff;
+	border: 1px solid #288b43;
+	color: #288b43;
+	padding: 10px 30px;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: .3s;
+}
+.cards-container .card-item .card-data .card-data-btns .card-data-btn-alt:hover{
+	background: #288b43;
+	color: #fff;
+}
+@media(max-width: 1000px){
+	.cards-container .card-item{
+		width: 47%;
+	}
+}
+@media(max-width: 650px){
+	.cards-container .card-item{
+		width: 100%;
+	}
+}

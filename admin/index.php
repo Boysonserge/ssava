@@ -15,10 +15,9 @@ include '../inc/db.php';
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App Icons -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-
+        <link rel="icon" href="../images/favicon.ico">
         <!-- morris css -->
-        <link rel="stylesheet" href="../plugins/morris/morris.css">
+        <link rel="stylesheet" href="plugins/morris/morris.css">
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />

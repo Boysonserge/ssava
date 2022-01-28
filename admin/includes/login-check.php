@@ -11,7 +11,7 @@ if (isset($_POST['login'])) {
     if (mysqli_num_rows($q)==1) {
 
        $_SESSION['admin']=$uname;
-       header("location: index.php");
+       header("location: index2.php");
        
     }else{
          $msg="<script>alert('Invalid credentials')</script>";

@@ -1,7 +1,5 @@
 <?php 
 
 session_start();
-unset($_SESSION['village']);
-unset($_SESSION['leader']);
-unset($_SESSION['my_village']);
+unset($_SESSION['admin']);
 echo "<script>window.location.replace('login');</script>"; ?>

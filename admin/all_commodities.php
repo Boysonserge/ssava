@@ -78,8 +78,6 @@ if (isset($_GET['id'])) {
                                         <th>Name</th>
                                         <th>Cost</th>
                                         <th>Range</th>
-                                        <th>Start date</th>
-                                        <th>End date</th>
                                         <th>Pic</th>
                                         <th>Action</th>
                                     </tr>
@@ -100,9 +98,7 @@ if (isset($_GET['id'])) {
                                          <td><?php echo $row['cName']; ?></td>
                                          <td><?php echo $row['cost']; ?></td>
                                          <td><?php echo $row['range']; ?></td>
-                                         <td><?php echo $row['start_date']; ?></td>
-                                         <td><?php echo $row['end_date']; ?></td>
-                                         <td><img src="../images/<?php echo $row['main_pic'];?>" alt=""></td>
+                                         <td><a target="_blank" href="../images/<?php echo $row['main_pic'];?>">View image</a></td>
                                          <td>
                                              <div class="btn-group mo-mb-2">
                                                  <button class="btn btn-outline-success btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

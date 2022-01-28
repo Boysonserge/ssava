@@ -50,7 +50,7 @@
   	<!--header-area end-->
 	
 	<!--page-banner start-->
-	<div class="page-banner-area bg-5">
+	<div class="page-banner-area bg-5 overlay">
 		<div class="container">
 			<div class="row align-items-center height-200">
 				<div class="col-sm-12">
