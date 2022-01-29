@@ -40,7 +40,7 @@
                                 <li><a href="index.php">Home</a>
 
                                 </li>
-                                <li><a href="#">Farms</a></li>
+                                <li><a href="farms.php">Farms</a></li>
 
                                 <li><a href="#">WHAT WE DO</a>
 

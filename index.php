@@ -110,7 +110,7 @@
                             <span class="left"><?php echo $row['range']?></span>
                         </div>
                         <div class="card-data-btns wrap-b">
-                            <a class="card-data-btn" href="checkout.php">Sponsor Fam</a>
+                            <a class="card-data-btn" href="checkout-invest.php?invest=<?php echo $row['commodity_id'] ?>">Sponsor Fam</a>
                             <a class="card-data-btn-alt" href="details.php?d=<?php echo $row['commodity_id']?>">Read more</a>
                         </div>
 
@@ -136,25 +136,33 @@
         </div>
         <div class="row mt-40 sm-mt-40">
 
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="sin-service style-2">
-                    <i class="ti-truck"></i>
-                    <h3>You pay</h3>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <i class="ti-angle-double-down"></i>
+                    <h3>Select your farm</h3>
+                    <p>Decide which farm your like to invest in and See the return and contract duration.</p>
                 </div>
             </div>
-            <div class="col-lg-4 d-lg-block col-md-6 d-md-none col-sm-12">
+            <div class="col-lg-3 d-lg-block col-md-6 d-md-none col-sm-12">
                 <div class="sin-service style-2">
-                    <i class="ti-cup"></i>
-                    <h3>We farm</h3>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <i class="ti-anchor"></i>
+                    <h3>Invest & Get your contract</h3>
+                    <p>Choose the farm deals that are most beneficial to you. </p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="sin-service style-2">
+                    <i class="ti-book"></i>
+                    <h3>Watch your farm progress</h3>
+                    <p>A farm visit can be scheduled at any time. You can see the faces of folks you're influencing and communicate with them.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="sin-service style-2">
                     <i class="ti-clipboard"></i>
-                    <h3>You earn</h3>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h3>Earn profits</h3>
+                    <p>Get your funds + your profit straight to your bank account.</p>
                 </div>
             </div>
         </div>
@@ -197,13 +205,13 @@
                 <div class="testimonial-items carousel-one arrow-none">
                     <div class="single-testimonial">
                         <p>I wanted to mention that these days, when the opposite of good customer and tech support <br/> tends to be the norm, it’s always great having a team like you guys at The Garden! So, be sure <br/> that I’ll always spread the word about how good your product is and the extraordinary level of <br/> support that you provide any time there is any need for it.</p>
-                        <h4>Nancy Franklin</h4>
-                        <small>UI/UX  Designer</small>
+                        <h4>Jean luc</h4>
+                        <small>Anonymous</small>
                     </div>
                     <div class="single-testimonial">
-                        <p>I wanted to mention that these days, when the opposite of good customer and tech support <br/> tends to be the norm, it’s always great having a team like you guys at The Garden! So, be sure <br/> that I’ll always spread the word about how good your product is and the extraordinary level of <br/> support that you provide any time there is any need for it.</p>
-                        <h4>Nancy Franklin</h4>
-                        <small>UI/UX  Designer</small>
+                        <p>As a seasoned farmer that came up through the  model, I can’t emphasize enough the importance of finding good farmer mentors for individuals looking for an agricultural education.  The experience gained through this platform helped me alot<br/> </p>
+                        <h4>N.Mikie</h4>
+                        <small>Anonymous</small>
                     </div>
                 </div>
             </div>

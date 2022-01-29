@@ -1,10 +1,11 @@
+<?php include "inc/db.php"; ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>SSAVA FARMS - Contact Us</title>
+    <title>SSAVA FARMS - Farms</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -50,15 +51,15 @@
 <!--header-area end-->
 
 <!--page-banner-area start-->
-<div class="page-banner-area bg-7 overlay">
+<div class="page-banner-area bg-6 overlay">
     <div class="container">
         <div class="row align-items-center height-400">
             <div class="col-lg-12">
                 <div class="page-banner-text text-white text-center">
-                    <h2>Contact Us</h2>
+                    <h2>Farms</h2>
                     <ul class="site-breadcrumb">
                         <li><a href="index.php">Home</a> <span>></span></li>
-                        <li>Contact</li>
+                        <li>farms</li>
                     </ul>
                 </div>
             </div>
@@ -67,55 +68,49 @@
 </div>
 <!--page-banner-area end-->
 
-<!--contact-area start-->
-<div class="contact-area mt-100 sm-mt-80">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4">
-                <div class="contact-info">
-                    <h3>Keep In Touch</h3>
-                    <div class="single-contact-info">
-                        <h4><i class="fa fa-map-marker"></i>Address</h4>
-                        <p>Kigali Rwanda </p>
+<div class="products-area" id="commo">
+    <div class="section-title text-center mt-20">
+        <h2>AVAILABLE COMMODITIES?</h2>
+    </div>
+    <div class="container-fluid">
+        <div class="cards-container wrap-b">
+            <?php
+            $q=mysqli_query($conn,"SELECT * FROM commodity ORDER BY commodity_id DESC");
+            while ($row=mysqli_fetch_array($q)){
+                ?>
+                <div class="card-item">
+                    <div class="card-image">
+                        <img src="images/<?php echo $row['main_pic']?>">
                     </div>
-                    <div class="single-contact-info">
-                        <h4><i class="fa fa-phone"></i>Phone</h4>
-                        <p ><a style="color: black" href="tel:+250788531643">+250 788 531 643</a></p>
-                    </div>
-                    <div class="single-contact-info">
-                        <h4><i class="fa fa-envelope"></i>Emai</h4>
-                        <p>ssavafarms@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8 col-md-8 sm-mt-75">
-                <div class="contact-form style-3">
-                    <form method="POST" action="">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Name" name="names"  />
-                            </div>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Email" name="email" />
-                            </div>
-                            <div class="col-lg-12">
-                                <input type="text" placeholder="Subject" name="subject" />
-                            </div>
-                            <div class="col-lg-12">
-                                <textarea placeholder="Message" name="message"></textarea>
-                            </div>
-                            <div class="col-lg-4">
-                                <button name="send" type="submit" class="btn-common">Send message</button>
-                            </div>
+                    <div class="card-data">
+                        <p class="card-data-heading"><?php echo $row['cName']?></p>
+                        <div class="card-data-caption wrap-b">
 
+                            <span><i class="fas fa-tags"></i>Cost Per Unit</span>
+                            <span class="left"><?php echo number_format($row['cost'])?> RWF</span>
                         </div>
-                    </form>
+
+                        <div class="card-data-caption wrap-b">
+                            <span><i class="far fa-bookmark"></i>Investment term</span>
+                            <span class="left"><?php echo $row['investment_term']?></span>
+                        </div>
+                        <div class="card-data-caption wrap-b">
+                            <span><i class="fas fa-exchange-alt"></i>Average profit</span>
+                            <span class="left"><?php echo $row['range']?></span>
+                        </div>
+                        <div class="card-data-btns wrap-b">
+                            <a class="card-data-btn" href="checkout-invest.php?invest=<?php echo $row['commodity_id'] ?>">Sponsor Fam</a>
+                            <a class="card-data-btn-alt" href="details.php?d=<?php echo $row['commodity_id']?>">Read more</a>
+                        </div>
+
+
+                    </div>
                 </div>
-            </div>
+            <?php } ?>
+
         </div>
     </div>
 </div>
-<!--contact-area end-->
 
 
 <div class="mt-20"></div>
@@ -162,19 +157,3 @@
 </body>
 
 </html>
-
-<?php
-include "inc/db.php";
-if (isset($_POST['send'])){
-    $names=mysqli_real_escape_string($conn,$_POST['names']);
-    $email=mysqli_real_escape_string($conn,$_POST['email']);
-    $subject=mysqli_real_escape_string($conn,$_POST['subject']);
-    $message=mysqli_real_escape_string($conn,$_POST['message']);
-    $q="INSERT INTO `contact` (`contact_id`, `names`, `email`, `subject`, `message`) VALUES (NULL, '$names', '$email', '$subject', '$message')";
-    if (mysqli_query($conn,$q)){
-        echo "<script>alert('MEssage sent , Thanks!')</script>";
-    }
-
-
-}
-?>
